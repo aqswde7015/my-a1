@@ -13,9 +13,6 @@ function App() {
     }
   };
 
-  const handleDeleteTodo = (id) => {
-    setTodoList(todoList.filter((todo) => todo.id !== id));
-  };
 
   return (
     <div className="container mx-auto p-4">
