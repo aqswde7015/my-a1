@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react';
+import AddTAsk from './component/AddTAsk';
+import TaskList from './component/TaskList';
+import "./App.css"
 function App() {
+  const [todoList, setTodoList] = useState([]);
+  const [newTodo, setNewTodo] = useState('');
+
+  const handleAddTodo = () => {
+    if (newTodo) {
+      setTodoList([...todoList, { id: Date.now(), text: newTodo }]);
+      setNewTodo('');
+    }
+  };
+
+  const handleDeleteTodo = (id) => {
+    setTodoList(todoList.filter((todo) => todo.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center mb-4">Danh sách các việc cần làm</h1>
+
+      <AddTAsk new = {newTodo} func = {setNewTodo} add = {handleAddTodo}/>
+      <TaskList List = {todoList} set = {setTodoList}/>
+      
     </div>
   );
 }

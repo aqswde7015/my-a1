@@ -68,3 +68,98 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ------------------------------------------------------------------------------------------------ -->
+## Cài đặt Tailwind CSS với ReactJS
+
+Để cài đặt và cấu hình Tailwind CSS cho dự án ReactJS, bạn thực hiện các bước sau:
+
+**1. Tạo dự án React:**
+
+* Khởi tạo dự án React mới bằng Create React App:
+
+```bash
+npx create-react-app my-app
+cd my-app
+```
+
+**2. Cài đặt Tailwind CSS:**
+
+* Cài đặt Tailwind CSS, PostCSS và Autoprefixer:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+**3. Khởi tạo Tailwind CSS:**
+
+* Chạy lệnh sau để khởi tạo Tailwind CSS:
+
+```bash
+npx tailwindcss init -p
+```
+
+**4. Cấu hình Tailwind CSS:**
+
+* Mở file `tailwind.config.js` và chỉnh sửa nội dung như sau:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+* Trong phần `content`, bạn có thể thêm các đường dẫn đến các file component React mà bạn muốn áp dụng Tailwind CSS.
+* Trong phần `theme`, bạn có thể tùy chỉnh các lớp CSS mặc định của Tailwind CSS.
+* Trong phần `plugins`, bạn có thể thêm các plugin Tailwind CSS khác.
+
+**5. Thêm Tailwind CSS vào dự án:**
+
+* Mở file `postcss.config.js` và thêm nội dung sau:
+
+```javascript
+module.exports = {
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ]
+}
+```
+
+**6. Chạy dự án:**
+
+* Chạy lệnh sau để khởi động server phát triển:
+
+```bash
+npm start
+```
+
+**Giải thích:**
+
+* `npx create-react-app my-app`: Khởi tạo dự án React mới với tên `my-app`.
+* `npm install -D tailwindcss postcss autoprefixer`: Cài đặt Tailwind CSS, PostCSS và Autoprefixer.
+* `npx tailwindcss init -p`: Khởi tạo Tailwind CSS và tạo file `tailwind.config.js`.
+* `tailwind.config.js`: File cấu hình Tailwind CSS.
+* `postcss.config.js`: File cấu hình PostCSS, bao gồm Tailwind CSS và Autoprefixer.
+* `npm start`: Khởi động server phát triển để xem ứng dụng React của bạn.
+
+**Lưu ý:**
+
+* Đảm bảo bạn đã cài đặt Node.js và npm trước khi thực hiện các bước trên.
+* Bạn có thể tham khảo thêm tài liệu chính thức của Tailwind CSS và ReactJS để biết thêm thông tin chi tiết về cách sử dụng và cấu hình:
+    * [https://v2.tailwindcss.com/docs](https://v2.tailwindcss.com/docs)
+    * [https://legacy.reactjs.org/docs/getting-started.html](https://legacy.reactjs.org/docs/getting-started.html)
+
+**Ngoài ra, bạn có thể tham khảo một số hướng dẫn chi tiết sau:**
+
+* Hướng dẫn thêm Tailwind CSS vào dự án React JS: [https://tailwindcss.com/docs/guides/create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
+* Cài đặt Tailwind CSS cho project React: [https://tailwindcss.com/docs/guides/create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
+* Hướng dẫn Tailwind CSS với React: [https://www.youtube.com/watch?v=L2KHCWJ3gjs](https://www.youtube.com/watch?v=L2KHCWJ3gjs)
+
+Chúc bạn thành công!
